@@ -30,11 +30,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6 xl:gap-8">
           
 
-          
-            <Link href="#contact" className="btn-primary flex items-center gap-2">
+            <a href={`tel:${phoneNumber}`} className="btn-primary flex items-center gap-2">
               <Phone size={18} />
               <span>{phoneNumber}</span>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -51,15 +50,10 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg animate-fade-in">
           <div className="flex flex-col p-4 space-y-4">
-            <Link href="#home" className="text-lg font-medium text-gray-800 p-2 hover:bg-gray-50 rounded" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link href="#residential" className="text-lg font-medium text-gray-800 p-2 hover:bg-gray-50 rounded" onClick={() => setIsOpen(false)}>Residential</Link>
-            <Link href="#commercial" className="text-lg font-medium text-gray-800 p-2 hover:bg-gray-50 rounded" onClick={() => setIsOpen(false)}>Business</Link>
-            <Link href="#irrigation" className="text-lg font-medium text-gray-800 p-2 hover:bg-gray-50 rounded" onClick={() => setIsOpen(false)}>Irrigation</Link>
-             <Link href="#payg" className="text-lg font-medium text-gray-800 p-2 hover:bg-gray-50 rounded" onClick={() => setIsOpen(false)}>Financing</Link>
-            <Link href="#contact" className="btn-primary w-full flex justify-center items-center gap-2 text-center" onClick={() => setIsOpen(false)}>
+            <a href={`tel:${phoneNumber}`} className="btn-primary w-full flex justify-center items-center gap-2 text-center" onClick={() => setIsOpen(false)}>
               <Phone size={18} />
               Call Now
-            </Link>
+            </a>
           </div>
         </div>
       )}

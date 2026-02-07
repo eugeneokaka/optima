@@ -27,10 +27,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Link href="#contact" className="btn-primary text-center flex items-center justify-center gap-2 group">
-              Get a Free Quote
-              <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </Link>
+
             <Link href="#products" className="btn-secondary text-center">
               View Solar Plans
             </Link>

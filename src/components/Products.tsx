@@ -56,9 +56,7 @@ export default function Products() {
         <div className="mt-20">
              <div className="flex justify-between items-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900">Recommended for you</h3>
-                <a href="#contact" className="bg-optima-orange text-white px-6 py-2 rounded-md font-bold text-sm hover:bg-orange-600 transition-colors">
-                    VIEW ALL
-                </a>
+
              </div>
              
              <div className="grid md:grid-cols-2 gap-8">
