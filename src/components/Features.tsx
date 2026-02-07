@@ -13,13 +13,13 @@ const features = [
   },
   {
     icon: <Globe className="w-8 h-8 text-optima-orange" />,
-    title: "Order from UK/Abroad",
-    description: "Living abroad? Order from the UK and we'll professionally install it at your home in Ghana."
+    title: "International Orders",
+    description: "Order from anywhere and we'll professionally install it at your location."
   },
   {
     icon: <Zap className="w-8 h-8 text-yellow-500" />,
     title: "24/7 Reliable Power",
-    description: "Say goodbye to 'Dumsor' and unstable grids. Enjoy uninterrupted power day and night."
+    description: "Say goodbye to blackouts and unstable grids. Enjoy uninterrupted power day and night."
   }
 ];
 
@@ -30,7 +30,7 @@ export default function Features() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-optima-blue font-bold text-3xl md:text-4xl mb-4">Why Choose Optima?</h2>
           <p className="text-gray-600 text-lg">
-            We are one of Ghana's most trusted solar companies, offering premium products from Longi, Jinko, and BYD.
+            We are one of the most trusted solar companies, offering premium products from Longi, Jinko, and BYD.
           </p>
         </div>
 

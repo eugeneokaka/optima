@@ -5,8 +5,8 @@ import { useState } from 'react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Phone number from the website: +233 (0) 50 502 3472
-  const phoneNumber = "+233 50 502 3472";
+  // Phone number
+  const phoneNumber = "+254 700 123 456";
 
   return (
     <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
@@ -28,10 +28,8 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 xl:gap-8">
-            {/* <Link href="#home" className="text-gray-700 hover:text-optima-blue font-medium transition-colors">Home</Link> */}
-            {/* <Link href="#residential" className="text-gray-700 hover:text-optima-blue font-medium transition-colors">Residential</Link>
-            <Link href="#commercial" className="text-gray-700 hover:text-optima-blue font-medium transition-colors">Business</Link>
-            <Link href="#irrigation" className="text-gray-700 hover:text-optima-blue font-medium transition-colors">Irrigation</Link> */}
+          
+
           
             <Link href="#contact" className="btn-primary flex items-center gap-2">
               <Phone size={18} />

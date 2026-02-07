@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="bg-gray-900 text-white pt-20 pb-10">
       <div className="container-custom">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-12 mb-16 justify-between">
           {/* Brand Info */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -12,32 +12,8 @@ export default function Footer() {
               <span className="text-2xl font-bold">Optima<span className="text-optima-green text-sm block font-normal">Solar Systems</span></span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              We provide affordable, premium solar panels and installation in Ghana. Order from the UK/abroad for your home in Ghana.
+              We provide affordable, premium solar panels and installation. Order from anywhere for your home or business.
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-bold mb-6 text-optima-orange">Quick Links</h4>
-            <ul className="space-y-4 text-gray-400">
-              <li><a href="#home" className="hover:text-white transition-colors flex items-center gap-2"><ArrowRight size={14} /> Home</a></li>
-              <li><a href="#residential" className="hover:text-white transition-colors flex items-center gap-2"><ArrowRight size={14} /> Residential Solar</a></li>
-              <li><a href="#commercial" className="hover:text-white transition-colors flex items-center gap-2"><ArrowRight size={14} /> Commercial Solar</a></li>
-              <li><a href="#irrigation" className="hover:text-white transition-colors flex items-center gap-2"><ArrowRight size={14} /> Pumps & Irrigation</a></li>
-              <li><a href="#payg" className="hover:text-white transition-colors flex items-center gap-2"><ArrowRight size={14} /> PAYG Financing</a></li>
-            </ul>
-          </div>
-
-          {/* Service Areas */}
-          <div>
-            <h4 className="text-lg font-bold mb-6 text-optima-orange">Serving Ghana</h4>
-            <ul className="space-y-4 text-gray-400">
-              <li className="flex items-center gap-2"><MapPin size={16} className="text-optima-green" /> Accra</li>
-              <li className="flex items-center gap-2"><MapPin size={16} className="text-optima-green" /> Kumasi</li>
-              <li className="flex items-center gap-2"><MapPin size={16} className="text-optima-green" /> Takoradi</li>
-              <li className="flex items-center gap-2"><MapPin size={16} className="text-optima-green" /> Cape Coast</li>
-              <li className="flex items-center gap-2"><MapPin size={16} className="text-optima-green" /> Tamale</li>
-            </ul>
           </div>
 
           {/* Contact Info */}
@@ -48,15 +24,14 @@ export default function Footer() {
                 <Phone className="text-optima-green shrink-0 mt-1" />
                 <div>
                    <p className="text-sm text-gray-400">Call / WhatsApp</p>
-                   <p className="font-bold text-lg">+233 30 824 9900</p>
-                   <p className="font-bold text-lg">+233 50 502 3472</p>
+                   <p className="font-bold text-lg">+254 700 123 456</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
                 <Mail className="text-optima-green shrink-0 mt-1" />
                 <div>
                    <p className="text-sm text-gray-400">Email Us</p>
-                   <p className="font-bold cursor-pointer hover:text-optima-orange">info@optimasolarsystems.com</p>
+                   <a href="mailto:info@optimasolar.co.ke" className="font-bold cursor-pointer hover:text-optima-orange">info@optimasolar.co.ke</a>
                 </div>
               </li>
             </ul>
@@ -65,7 +40,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
           <p>&copy; {new Date().getFullYear()} Optima Solar Systems. All rights reserved.</p>
-          <p>Installs in Ghana • Orders from UK</p>
+          <p>Professional Installations Countrywide</p>
         </div>
       </div>
     </footer>

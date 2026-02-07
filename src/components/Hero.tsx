@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="space-y-8 animate-slide-up">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
             <Zap className="text-optima-orange fill-optima-orange" size={20} />
-            <span className="font-semibold text-sm tracking-wide uppercase">Trusted Solar Energy in Ghana</span>
+            <span className="font-semibold text-sm tracking-wide uppercase">Trusted Solar Energy Solutions</span>
           </div>
           
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
@@ -23,7 +23,7 @@ export default function Hero() {
           <p className="text-xl text-blue-100 max-w-xl leading-relaxed">
             Power your home or business with premium solar solutions. 
             Flexible <strong>Pay-As-You-Go</strong> plans and comprehensive solar insurance available. 
-            Seamless installation across Ghana.
+            Seamless installation countrywide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -31,7 +31,7 @@ export default function Hero() {
               Get a Free Quote
               <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </Link>
-            <Link href="#residential" className="btn-secondary text-center">
+            <Link href="#products" className="btn-secondary text-center">
               View Solar Plans
             </Link>
           </div>
@@ -40,8 +40,8 @@ export default function Hero() {
              <div className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/10 max-w-md">
                 <Globe className="text-optima-green shrink-0" size={24} />
                 <div>
-                   <span className="text-white font-bold block">Order from UK, Install in Ghana</span>
-                   <span className="text-xs opacity-80">Seamless service for diaspora customers in London, Manchester & more.</span>
+                   <span className="text-white font-bold block">International Orders Accepted</span>
+                   <span className="text-xs opacity-80">Seamless service for customers worldwide.</span>
                 </div>
              </div>
              
@@ -52,7 +52,7 @@ export default function Hero() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-optima-green animate-pulse" />
-                  <span>Serving Accra, Kumasi & Beyond</span>
+                  <span>Serving You Countrywide</span>
                 </div>
              </div>
           </div>

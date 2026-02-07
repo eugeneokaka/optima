@@ -1,31 +1,29 @@
-import { Zap, Battery, Check, CreditCard } from 'lucide-react';
+import { 
+  Zap, 
+  Sun, 
+  Battery, 
+  Droplets, 
+  Lightbulb, 
+  Cpu, 
+  Plug, 
+  ThermometerSun, 
+  Activity,
+  Box
+} from 'lucide-react';
 
-const products = [
-  {
-    title: "Residential Solar",
-    subtitle: "3kW - 10kW Systems",
-    price: "Flexible Payment Plans",
-    features: ["Backup for lights & appliances", "Hybrid Inverter Technology", "Lithium Battery Storage", "Remote Monitoring App"],
-    highlight: "Popular for Homes",
-    color: "bg-blue-50"
-  },
-  {
-    title: "Commercial Solar",
-    subtitle: "5kW - 50kW Systems",
-    price: "Custom ROI Analysis",
-    features: ["Grid-tied & Hybrid options", "Reduce Operational Costs", "Tax Incentives available", "Industrial Grade components"],
-    highlight: "For Business",
-    recommended: true, 
-    color: "bg-orange-50"
-  },
-  {
-    title: "Solar Pumps",
-    subtitle: "Irrigation Systems",
-    price: "Fuel Savings",
-    features: ["Zero fuel costs", "Reliable water supply", "Maintenance-free", "For farms & greenhouses"],
-    highlight: "Agribusiness",
-    color: "bg-green-50"
-  }
+const categories = [
+  { name: "Solar Inverters", icon: <Zap /> },
+  { name: "Solar Panels", icon: <Sun /> },
+  { name: "Water Heaters", icon: <ThermometerSun /> },
+  { name: "Solar Batteries", icon: <Battery /> },
+  { name: "Lithium Batteries", icon: <Battery className="rotate-90" /> }, // Distinguish visually
+  { name: "Solar Water Pumps", icon: <Droplets /> },
+  { name: "Charge Controllers", icon: <Cpu /> },
+  { name: "Solar Lights", icon: <Lightbulb /> },
+  { name: "Water Pumping Inverters", icon: <Activity /> },
+  { name: "Backup Kits", icon: <Box /> },
+  { name: "Solar Accessories", icon: <Plug /> },
+  { name: "More Categories", icon: <Sun /> }
 ];
 
 export default function Products() {
@@ -33,56 +31,59 @@ export default function Products() {
     <section id="products" className="py-24 bg-white">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-sm font-bold mb-4">
-            <CreditCard size={16} />
-            <span>Pay-As-You-Go Available</span>
-          </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Tailored Solar Solutions</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Shop by Department</h2>
           <p className="text-gray-600">
-            We use premium components from trusted brands like <strong>Longi</strong>, <strong>Jinko Solar</strong>, <strong>BYD</strong>, and <strong>Growatt</strong>.
+            Explore our wide range of tailored solar solutions and components.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <div 
-              key={index} 
-              id={index === 0 ? "residential" : index === 1 ? "commercial" : "irrigation"} 
-              className={`relative rounded-3xl p-8 border hover:shadow-xl transition-all duration-300 ${product.recommended ? 'border-optima-orange shadow-lg' : 'border-gray-100'} scroll-mt-24`}
-            >
-              {product.recommended && (
-                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-optima-orange text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
-                   Top Choice
-                 </div>
-              )}
-              
-              <div className={`w-14 h-14 ${product.color} rounded-2xl flex items-center justify-center mb-6`}>
-                <Zap className="w-8 h-8 text-gray-800" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {categories.map((category, index) => (
+            <a href="#contact" key={index} className="flex flex-col items-center group cursor-pointer">
+              <div className="w-24 h-24 rounded-full bg-green-50 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-green-100 border border-green-100">
+                <div className="text-optima-green w-10 h-10 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
+                  {category.icon}
+                </div>
               </div>
-
-              <div className="mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-gray-500">{product.highlight}</span>
-                <h3 className="text-2xl font-bold text-gray-900 mt-1">{product.title}</h3>
-                <p className="text-optima-blue font-medium mt-1">{product.subtitle}</p>
-              </div>
-
-              <div className="border-t border-b border-gray-100 py-6 mb-6">
-                 <p className="text-gray-900 font-bold mb-2">{product.price}</p>
-                  <ul className="space-y-3">
-                  {product.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                      <Check className="w-4 h-4 text-optima-green shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <button className="w-full py-3 rounded-xl font-bold bg-gray-900 text-white hover:bg-optima-blue transition-colors">
-                Request Quote
-              </button>
-            </div>
+              <h3 className="text-center font-medium text-gray-800 group-hover:text-optima-blue transition-colors">
+                {category.name}
+              </h3>
+            </a>
           ))}
+        </div>
+
+        {/* Categories from the "Recommended for you" in the image (placeholder for context) */}
+        <div className="mt-20">
+             <div className="flex justify-between items-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-900">Recommended for you</h3>
+                <a href="#contact" className="bg-optima-orange text-white px-6 py-2 rounded-md font-bold text-sm hover:bg-orange-600 transition-colors">
+                    VIEW ALL
+                </a>
+             </div>
+             
+             <div className="grid md:grid-cols-2 gap-8">
+                 {/* Placeholder for the blue Victron controller */}
+                 <div className="bg-gray-50 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+                     <div className="w-full h-48 bg-white rounded-lg flex items-center justify-center mb-6 shadow-sm">
+                        <Cpu className="text-blue-500 w-24 h-24" />
+                     </div>
+                     <h4 className="font-bold text-lg mb-2">SmartSolar Charge Controller</h4>
+                     <p className="text-gray-500 mb-4">MPPT 100 | 50</p>
+                     <a href="#contact" className="text-optima-blue font-bold hover:underline">View Details</a>
+                 </div>
+
+                 {/* Placeholder for the MUST inverter/battery */}
+                 <div className="bg-gray-50 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+                     <div className="w-full h-48 bg-white rounded-lg flex items-center justify-center mb-6 shadow-sm">
+                        <Zap className="text-red-500 w-24 h-24" />
+                     </div>
+                     <h4 className="font-bold text-lg mb-2">Hybrid Solar Inverter</h4>
+                     <p className="text-gray-500 mb-4">High Efficiency Power</p>
+                     <a href="#contact" className="bg-yellow-400 text-black px-6 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-yellow-500">
+                        Reach us on WhatsApp
+                     </a>
+                 </div>
+             </div>
         </div>
       </div>
     </section>
