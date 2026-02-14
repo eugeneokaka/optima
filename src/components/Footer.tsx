@@ -24,7 +24,8 @@ export default function Footer() {
                 <Phone className="text-optima-green shrink-0 mt-1" />
                 <div>
                    <p className="text-sm text-gray-400">Call / WhatsApp</p>
-                   <p className="font-bold text-lg">+254 700 123 456</p>
+                   <p className="font-bold text-lg">+254 102 378 507</p>
+                   <p className="font-bold text-lg">0752 813 176</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -32,6 +33,20 @@ export default function Footer() {
                 <div>
                    <p className="text-sm text-gray-400">Email Us</p>
                    <a href="mailto:info@optimasolar.co.ke" className="font-bold cursor-pointer hover:text-optima-orange">info@optimasolar.co.ke</a>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <MapPin className="text-optima-green shrink-0 mt-1" />
+                <div>
+                   <p className="text-sm text-gray-400">Visit Us</p>
+                   <a 
+                     href="https://maps.app.goo.gl/QrmWxmacZTWif6hP9" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="font-bold cursor-pointer hover:text-optima-orange"
+                   >
+                     View Location on Map
+                   </a>
                 </div>
               </li>
             </ul>

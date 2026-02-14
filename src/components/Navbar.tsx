@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   // Phone number
-  const phoneNumber = "+254 700 123 456";
+  const phoneNumber = "+254 102 378 507";
 
   return (
     <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">

@@ -8,8 +8,73 @@ import {
   Plug, 
   ThermometerSun, 
   Activity,
-  Box
+  Box,
+  CheckCircle2,
+  Phone
 } from 'lucide-react';
+
+const packages = [
+  {
+    name: "Starter Home System (3kW)",
+    price: "KSh 225,000 – 245,000",
+    description: "Perfect for young families and first-time solar buyers.",
+    features: [
+      "6–8 high-efficiency solar panels",
+      "3kW hybrid inverter",
+      "5kWh lithium battery",
+      "Mounting structure & Cables",
+      "Basic installation"
+    ],
+    powers: ["lighting", "TV", "WiFi", "Fridge", "Laptop", "Decoder"],
+    badge: "FAST SELLER",
+    color: "blue"
+  },
+  {
+    name: "Most Popular System (5–6kW)",
+    price: "KSh 400,000 – 460,000",
+    description: "The ideal choice for modern homes with standard appliances.",
+    features: [
+      "10–14 solar panels",
+      "5–6kW hybrid inverter",
+      "10kWh lithium battery",
+      "Smart monitoring system",
+      "Full installation"
+    ],
+    powers: ["Washing machine", "Microwave", "Water pump", "Fridges", "Home office"],
+    badge: "MOST POPULAR",
+    color: "green" // Optima green
+  },
+  {
+    name: "Executive / Business (8kW)",
+    price: "KSh 560,000 – 620,000",
+    description: "For large homes and small businesses engaging in heavy usage.",
+    features: [
+      "16–18 panels",
+      "8kW inverter",
+      "15kWh lithium battery",
+      "Advanced protections",
+      "Professional installation"
+    ],
+    powers: ["Air conditioners", "Salon equipment", "Office setups", "Borehole pump"],
+    badge: "PREMIUM",
+    color: "orange"
+  },
+  {
+    name: "Energy Independence (10kW)",
+    price: "KSh 650,000 – 750,000",
+    description: "Complete energy independence for large villas and institutions.",
+    features: [
+      "20+ premium panels",
+      "10kW hybrid inverter",
+      "20kWh lithium battery",
+      "Smart energy monitoring",
+      "Priority installation"
+    ],
+    powers: ["Large villas", "Hospitals", "Schools", "Restaurants", "Farms"],
+    badge: "ULTIMATE",
+    color: "gray"
+  }
+];
 
 const categories = [
   { name: "Solar Inverters", icon: <Zap /> },
@@ -52,36 +117,72 @@ export default function Products() {
           ))}
         </div>
 
-        {/* Categories from the "Recommended for you" in the image (placeholder for context) */}
-        <div className="mt-20">
-             <div className="flex justify-between items-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900">Recommended for you</h3>
+        <div className="mt-24">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Solar Packages</h2>
+              <p className="text-gray-600">
+                Choose the perfect power solution for your home or business.
+              </p>
+            </div>
 
-             </div>
-             
-             <div className="grid md:grid-cols-2 gap-8">
-                 {/* Placeholder for the blue Victron controller */}
-                 <div className="bg-gray-50 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-                     <div className="w-full h-48 bg-white rounded-lg flex items-center justify-center mb-6 shadow-sm">
-                        <Cpu className="text-blue-500 w-24 h-24" />
-                     </div>
-                     <h4 className="font-bold text-lg mb-2">SmartSolar Charge Controller</h4>
-                     <p className="text-gray-500 mb-4">MPPT 100 | 50</p>
-                     <a href="#contact" className="text-optima-blue font-bold hover:underline">View Details</a>
-                 </div>
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+              {packages.map((pkg, index) => (
+                <div key={index} className={`bg-white rounded-2xl p-6 border-2 transition-all duration-300 hover:shadow-xl relative flex flex-col ${pkg.badge === 'MOST POPULAR' ? 'border-optima-green shadow-lg scale-105 z-10' : 'border-transparent shadow-md hover:border-gray-200'}`}>
+                  {pkg.badge && (
+                    <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-sm ${
+                      pkg.badge === 'MOST POPULAR' ? 'bg-optima-green' : 
+                      pkg.badge === 'FAST SELLER' ? 'bg-blue-500' :
+                      pkg.badge === 'PREMIUM' ? 'bg-optima-orange' : 'bg-gray-800'
+                    }`}>
+                      {pkg.badge}
+                    </div>
+                  )}
 
-                 {/* Placeholder for the MUST inverter/battery */}
-                 <div className="bg-gray-50 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-                     <div className="w-full h-48 bg-white rounded-lg flex items-center justify-center mb-6 shadow-sm">
-                        <Zap className="text-red-500 w-24 h-24" />
-                     </div>
-                     <h4 className="font-bold text-lg mb-2">Hybrid Solar Inverter</h4>
-                     <p className="text-gray-500 mb-4">High Efficiency Power</p>
-                     <a href="#contact" className="bg-yellow-400 text-black px-6 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-yellow-500">
-                        Reach us on WhatsApp
-                     </a>
-                 </div>
-             </div>
+                  <div className="mb-6 mt-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
+                    <p className="text-sm text-gray-500 mb-4 h-10">{pkg.description}</p>
+                    <div className="text-optima-blue font-bold text-lg mb-1">{pkg.price}</div>
+                    <div className="text-xs text-gray-400">Retail Price (Est.)</div>
+                  </div>
+
+                  <div className="space-y-4 mb-8 flex-grow">
+                    <div>
+                      <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-3">Includes</h4>
+                      <ul className="space-y-2">
+                        {pkg.features.map((feature, idx) => (
+                          <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-3">Powers</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {pkg.powers.map((power, idx) => (
+                          <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium">
+                            {power}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <a 
+                    href="#contact" 
+                    className={`w-full py-3 rounded-xl font-bold text-center transition-colors flex items-center justify-center gap-2 ${
+                      pkg.badge === 'MOST POPULAR' 
+                        ? 'bg-optima-green text-white hover:bg-green-600' 
+                        : 'bg-gray-900 text-white hover:bg-gray-800'
+                    }`}
+                  >
+                    Get Query <Phone size={16} />
+                  </a>
+                </div>
+              ))}
+            </div>
         </div>
       </div>
     </section>
