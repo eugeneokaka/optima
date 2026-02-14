@@ -37,15 +37,26 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-4">
                 <MapPin className="text-optima-green shrink-0 mt-1" />
-                <div>
-                   <p className="text-sm text-gray-400">Visit Us</p>
+                 <div>
+                   <p className="text-sm text-gray-400 mb-2">Visit Us</p>
+                   <div className="w-full h-48 rounded-lg overflow-hidden mb-2 border border-gray-700">
+                     <iframe 
+                       src="https://maps.google.com/maps?q=-1.3276461,36.7890244&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                       width="100%" 
+                       height="100%" 
+                       style={{ border: 0 }} 
+                       allowFullScreen 
+                       loading="lazy" 
+                       referrerPolicy="no-referrer-when-downgrade"
+                     ></iframe>
+                   </div>
                    <a 
                      href="https://maps.app.goo.gl/QrmWxmacZTWif6hP9" 
                      target="_blank" 
                      rel="noopener noreferrer"
-                     className="font-bold cursor-pointer hover:text-optima-orange"
+                     className="text-sm font-bold cursor-pointer hover:text-optima-orange flex items-center gap-1"
                    >
-                     View Location on Map
+                     View Larger Map
                    </a>
                 </div>
               </li>
