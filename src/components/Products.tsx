@@ -17,6 +17,8 @@ const packages = [
   {
     name: "Starter Home System (3kW)",
     price: "KSh 225,000 – 245,000",
+    wholesale: "KSh 170,000 – 185,000",
+    profit: "40K – 70K per sale",
     description: "Perfect for young families and first-time solar buyers.",
     features: [
       "6–8 high-efficiency solar panels",
@@ -25,13 +27,17 @@ const packages = [
       "Mounting structure & Cables",
       "Basic installation"
     ],
-    powers: ["lighting", "TV", "WiFi", "Fridge", "Laptop", "Decoder"],
+    powers: ["Full house lighting", "TV", "WiFi", "Fridge", "Laptop charging", "Decoder"],
+    target: "Young families, first-time solar buyers, rural homes.",
+    strategy: "FAST SELLER — Always stock this.",
     badge: "FAST SELLER",
     color: "blue"
   },
   {
     name: "Most Popular System (5–6kW)",
     price: "KSh 400,000 – 460,000",
+    wholesale: "310K – 350K",
+    profit: "70K – 120K",
     description: "The ideal choice for modern homes with standard appliances.",
     features: [
       "10–14 solar panels",
@@ -41,12 +47,16 @@ const packages = [
       "Full installation"
     ],
     powers: ["Washing machine", "Microwave", "Water pump", "Fridges", "Home office"],
+    target: "Middle & upper-middle income homes.",
+    strategy: "SELL THIS THE MOST. Nearly 60% of solar buyers fall here.",
     badge: "MOST POPULAR",
     color: "green" // Optima green
   },
   {
-    name: "Executive / Business (8kW)",
+    name: "Executive Home / Small Business (8kW)",
     price: "KSh 560,000 – 620,000",
+    wholesale: "440K – 480K",
+    profit: "100K – 160K",
     description: "For large homes and small businesses engaging in heavy usage.",
     features: [
       "16–18 panels",
@@ -55,13 +65,17 @@ const packages = [
       "Advanced protections",
       "Professional installation"
     ],
-    powers: ["Air conditioners", "Salon equipment", "Office setups", "Borehole pump"],
+    powers: ["Air conditioners (controlled use)", "Salon equipment", "Office setups", "Borehole pump", "Heavy appliances"],
+    target: "Business owners, large homes.",
+    strategy: "High-ticket = fewer sales but BIG profit.",
     badge: "PREMIUM",
     color: "orange"
   },
   {
     name: "Energy Independence (10kW)",
     price: "KSh 650,000 – 750,000",
+    wholesale: "520K – 560K",
+    profit: "120K – 200K",
     description: "Complete energy independence for large villas and institutions.",
     features: [
       "20+ premium panels",
@@ -71,6 +85,8 @@ const packages = [
       "Priority installation"
     ],
     powers: ["Large villas", "Hospitals", "Schools", "Restaurants", "Farms"],
+    target: "Wealthy clients & institutions.",
+    strategy: "Do NOT stock many — order on demand.",
     badge: "ULTIMATE",
     color: "gray"
   }
@@ -141,8 +157,20 @@ export default function Products() {
                   <div className="mb-6 mt-2">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
                     <p className="text-sm text-gray-500 mb-4 h-10">{pkg.description}</p>
-                    <div className="text-optima-blue font-bold text-lg mb-1">{pkg.price}</div>
-                    <div className="text-xs text-gray-400">Retail Price (Est.)</div>
+                    
+                    <div className="bg-gray-50 p-3 rounded-lg mb-2">
+                      <div className="text-optima-blue font-bold text-lg">{pkg.price}</div>
+                      <div className="text-xs text-gray-400 mb-2">Recommended Retail Price</div>
+                      
+                      <div className="flex justify-between text-xs border-t border-gray-200 pt-2 mt-2">
+                        <span className="text-gray-500">Estimated Wholesale Cost:</span>
+                        <span className="font-semibold text-gray-700">{pkg.wholesale}</span>
+                      </div>
+                      <div className="flex justify-between text-xs pt-1">
+                        <span className="text-gray-500">Profit Potential:</span>
+                        <span className="font-semibold text-green-600">{pkg.profit}</span>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="space-y-4 mb-8 flex-grow">
@@ -167,6 +195,22 @@ export default function Products() {
                           </span>
                         ))}
                       </div>
+                    </div>
+
+                    <div>
+                       <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-2">Target Customers</h4>
+                       <p className="text-sm text-gray-600 italic">
+                         {pkg.target}
+                       </p>
+                    </div>
+
+                    <div className="bg-yellow-50 border border-yellow-100 p-3 rounded-lg">
+                       <h4 className="text-xs font-bold text-yellow-800 uppercase tracking-wide mb-1 flex items-center gap-1">
+                         <Lightbulb size={12} /> Strategy Note
+                       </h4>
+                       <p className="text-xs text-yellow-800 font-medium">
+                         {pkg.strategy}
+                       </p>
                     </div>
                   </div>
 
